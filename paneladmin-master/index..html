@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Login</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    </header>
+    <body>
+        <div style="margin-bottom: 3%;" ></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Username:</label>
+                                    <input id="username" name="Username" type="text" placeholder="Username" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Pass:</label>
+                                    <input id="password" name="Password" type="password" placeholder="Password" class="form-control">
+                                </div>
+                            </div>
+
+                            <button  onclick="validacio()">Login</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    async function validacio(){
+    var username = document.getElementById("username").value
+    var password = document.getElementById("password").value
+
+    if(username==='nat'||username==='pau'||username==='sergi'){
+        if(password==='test'){
+            window.location.href = 'http://natalia-mas-7e3.alwaysdata.net/addBooks/book.html';
+        }else{
+            alert('password incorrecto')
+        }
+    }else{
+        alert('user incorrecto')
+    }
+}
+</script>

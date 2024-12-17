@@ -1,0 +1,58 @@
+<ion-content>
+<div id="modoInvi">
+  <div class="title">
+    <ion-title><h1>Abrir libros</h1></ion-title>
+  </div>
+  
+
+  <div style="text-align:center">
+    <ion-button id="buton" (click)="abrirlibro()">ABRIR LIBRO<input (change)="navigate()" style="opacity: 0; width: 0;" id="book" type="file" name="book"/></ion-button>
+  </div>
+
+
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentAlertHelp('inv')">
+      <ion-icon name="help-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</div>
+
+
+<div id ="modoPro" style="display: none;">
+  <div class="title">
+    <ion-title><h1>Offline<ion-icon style="margin-left: 8px;" name="help-circle-outline" (click)="presentAlertHelp('')"></ion-icon></h1></ion-title>
+  </div>
+
+  <div (click)="openSegment();">
+    <ion-searchbar id="search" (ionCancel)="closeSegment()" (ionClear)="llenarLista()" (keyup)="search()"  showCancelButton="focus"></ion-searchbar>
+    <div id="pantallaBuscar" style="display: none;">
+      <ion-segment value="all">
+        <ion-segment-button  id="titulo" (click)="changeFilter('title')" value="title">
+          <ion-label>Título</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('author')" value="author">
+          <ion-label>Autor</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('tags')" value="tags">
+          <ion-label>Categoria</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('language')" value="language">
+          <ion-label>Idioma</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+
+
+<app-full-page-books [offline]="true"[books]="booksSearch"></app-full-page-books>
+
+<input (change)="addBookToOffline()" style="opacity: 0; width: 0;" id="bookAddToOffline" type="file" name="book"/>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="addToOffline()">
+  <ion-fab-button>
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</div>
+</ion-content>

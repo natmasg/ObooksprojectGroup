@@ -1,0 +1,34 @@
+<!--solo que salga a partir del alertttt, si es el inicio nope-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-title><h1>Registro</h1></ion-title>
+  </div>
+
+  <p class="text">¡Bienvenid@ a <strong>oBooks</strong>!<br>En placer conocerle, ¿Cual es su nombre?</p>
+
+
+  <ion-list class="form">
+    <ion-item>
+      <ion-label position="floating">Elija un apodo</ion-label>
+      <ion-input [(ngModel)]="userName"></ion-input>
+    </ion-item>
+    
+    <ion-button class="principar-button" (click)="validate()">Registrarse</ion-button>
+    <p class="text">o</p>
+    <div class="secondary-button">
+      <p class="secondary-button" (click)="sendToLogin()">Iniciar Sesión</p>
+    </div>
+    <div class="secondary-button-darker">
+      <p (click)="useGuest()">Usar <strong>oBooks</strong> como invitado</p>
+    </div>
+  
+  </ion-list>
+</ion-content>

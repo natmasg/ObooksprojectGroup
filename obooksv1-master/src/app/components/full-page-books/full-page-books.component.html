@@ -1,0 +1,30 @@
+
+  <span *ngIf="offline">
+  <ion-card *ngFor="let b of books;" (click)="openBookOffline(b)">
+      <ion-img *ngIf="b.img!=''" src="{{b.img}}"></ion-img>
+      <ion-img *ngIf="b.img==''" src="/assets/icons/logoLibro.png"></ion-img>
+      <div *ngIf="b.img==''" class="overlay">
+        {{b.title}}
+      </div>
+      <div class="book" id="invisibleCard1">
+        <ion-card style="box-shadow: none !important;"></ion-card>
+      </div>
+      <div class="book" id="invisibleCard2">
+        <ion-card style="box-shadow: none !important;"></ion-card>
+      </div>
+    </ion-card>
+  </span>
+
+  <span *ngIf="!offline">
+    <div class="book">
+      <ion-card *ngFor="let b of books;" (click)="openBook(b)">
+        <ion-img src="{{b.img}}"></ion-img>
+      </ion-card>
+    </div>
+    <div class="book" id="invisibleCard3">
+      <ion-card style="box-shadow: none !important;"></ion-card>
+    </div>
+    <div class="book" id="invisibleCard4">
+      <ion-card style="box-shadow: none !important;"></ion-card>
+    </div>
+  </span>

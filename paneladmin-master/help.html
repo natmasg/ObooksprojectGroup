@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Add Help :D</title>
+        <meta charset="UTF-8">
+        <a href="book.html">Add  Books</a>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    </header>
+    <body>
+        <div style="margin-bottom: 3%;" ></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Title:</label>
+                                    <input id="title" name="title" type="text" placeholder="Title" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Subtitle:</label>
+                                    <input id="subtitle" name="subtitle" type="text" placeholder="subtitle" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Content:</label>
+                                    <input id="content" name="content" type="text" placeholder="content" class="form-control">
+                                </div>
+                            </div>
+                            <button  onclick="validacio()">ADD HELP</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    async function validacio(){
+    var title = document.getElementById("title").value
+    var subtitle = document.getElementById("subtitle").value
+    var content = document.getElementById("content").value
+
+
+    var help={
+        'title': title,
+        'subtitle': subtitle,
+        'contentt': content,
+
+    };
+
+    console.log(help)
+
+    const url = "http://sergi-diaz-7e2.alwaysdata.net/obooksback/index.php/api/helpadd?";
+    var postHelp = await fetch(url, {
+       headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify(help)
+    })
+        alert(postHelp.status)
+    if(postHelp.status===200){
+        var title = document.getElementById("title").value =""
+        var subtitle = document.getElementById("subtitle").value =""
+        var content = document.getElementById("content").value =""
+
+    }
+}
+</script>

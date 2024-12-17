@@ -1,0 +1,56 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+<ion-content [fullscreen]="true">
+  
+
+
+<div id="principal" style="display: none;"></div>
+  <div (click)="openSegment();">
+    <ion-searchbar id="search" (ionCancel)="closeSegment()" (ionClear)="llenarLista()" (keyup)="search()"  showCancelButton="focus"></ion-searchbar>
+    <div id="pantallaBuscar" style="display: none;">
+      <ion-segment value="all">
+        <ion-segment-button  id="titulo" (click)="changeFilter('title')" value="title">
+          <ion-label>Título</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('author')" value="author">
+          <ion-label>Autor</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('tags')" value="tags">
+          <ion-label>Categoria</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('language')" value="language">
+          <ion-label>Idioma</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+
+  <!--<app-list-categories></app-list-categories>-->
+  
+  <!--<app-books *ngFor="let c of allCategories" category="{{c}}" size="little_book"></app-books>-->
+
+<div id="listadoInicial" (click)="closeSegment()">
+  <app-list-categories ></app-list-categories>
+</div>
+
+  
+
+<div id="listadoFiltro" style="display: none; height: 300px;">
+  <app-full-page-books  [books]="booksSearch"></app-full-page-books>
+</div>
+
+
+
+  <!--<ion-card style="width: 30%;" (click)="viewBookDetail()">
+    <ion-img src="https://edit.org/img/blog/wdn-editar-portadas-de-libros-gratis.jpg"></ion-img>
+  </ion-card>-->
+
+  <!--<app-books title="holi big" size="big_book"></app-books>-->
+
+</ion-content>

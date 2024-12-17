@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/settings"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Cambiar email de la cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="logForm()">
+    <ion-item lines="full">
+      <ion-label><p>Contraseña de la cuenta</p></ion-label>
+      <ion-input type="password" [(ngModel)]="todo.password" name="password"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label><p>Email nuevo</p></ion-label>
+      <ion-input [(ngModel)]="todo.newEmail" name="newEmail"></ion-input>
+    </ion-item>
+    <ion-button type="submit" style="width: 80%; margin-left: 10%; margin-top: 30px;" block>Cambiar</ion-button>
+  </form>
+</ion-content>

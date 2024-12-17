@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/settings"></ion-back-button>
+  </ion-buttons>
+    <ion-title>Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-label><p>Asunto:</p></ion-label>
+    <ion-input type="text" name="content"></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label><p>Mensaje:</p></ion-label>
+    <ion-input type="text" name="content"></ion-input>
+  </ion-item>
+  <ion-button (click)="enviar()" type="submit" style="width: 80%; margin-left: 10%; margin-top: 30px;" block>Enviar</ion-button>
+</ion-content>

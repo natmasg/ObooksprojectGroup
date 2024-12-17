@@ -1,0 +1,87 @@
+
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+  <ion-content id="content" >
+    <div id="viewer">
+    </div>
+
+    <div  style="width:100%;position: absolute; bottom: 0;display: flex;justify-content: space-between;">
+        <ion-button color="light"  (click)="previous()"><</ion-button>
+        <ion-button color="light"  (click)="next()" style="float: right;">></ion-button>
+    </div>
+
+    <ion-button expand="block" (click)="openMenu()">Open Menu</ion-button>
+    
+
+      <ion-menu side="start" menuId="menu" content-id="main">
+        <ion-header>
+          <ion-toolbar translucent>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list style="margin-top: 50px;">
+            <ion-item>
+              <ion-label>Themes</ion-label>
+              <div style="display: flex;flex-direction: row;">
+                <div class="circle" (click)="estilos('theme',' ')">
+                  T
+                </div>
+                <div class="circle" (click)="estilos('theme','dark')">
+                  T
+                </div>
+                <div class="circle" (click)="estilos('theme','obooks')">
+                  T
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-label>Font Size</ion-label>
+              <div style="display: flex;flex-direction: row;">
+                <div class="circle" (click)="estilos('fontSize','12px')">
+                  S
+                </div>
+                <div class="circle" (click)="estilos('fontSize','30px')">
+                  M
+                </div>
+                <div class="circle" (click)="estilos('fontSize','50px')">
+                  L
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-label>Font Style</ion-label>
+              <div style="display: flex;flex-direction: row;">
+                <div class="circle" (click)="estilos('fontStyle','a')">
+                  Aa
+                </div>
+                <div class="circle" (click)="estilos('fontStyle','e')">
+                  Aa
+                </div>
+                <div class="circle" (click)="estilos('fontStyle','i')">
+                  Aa
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-label>Line spacing</ion-label>
+              <div style="display: flex;flex-direction: row;">
+                <div class="circle" style="padding-top: 8px;" (click)="estilos('lineSpacing','1')">
+                  <img style="width: 20px;" src="assets/icons/line-spacing.svg">
+                </div>
+                <div class="circle" style="padding-top: 8px;" (click)="estilos('lineSpacing','1.5')">
+                  <img style="width: 20px;" src="assets/icons/line-spacing-medium.svg">
+                </div>
+                <div class="circle" style="padding-top: 8px;" (click)="estilos('lineSpacing','3')">
+                  <img style="width: 20px;" src="assets/icons/line-spacing-big.svg">
+                </div>
+              </div>
+            </ion-item>
+
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+
+  </ion-content>
+
+

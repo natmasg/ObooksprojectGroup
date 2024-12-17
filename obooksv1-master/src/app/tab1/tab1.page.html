@@ -1,0 +1,109 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>-->
+
+
+
+<ion-content [fullscreen]="true">
+
+ 
+
+
+  <div class="title">
+    <ion-title><h1>Hola, {{user.name}} :D</h1></ion-title>
+  </div>
+
+  <div class="principalLibraries2">
+    <div>
+      <ion-card class="favs" style="background-color: #A48A60; color: #DCC095;" lines="full" color="primary" (click)="libfav()">
+        <ion-card-header>
+          <ion-icon name="heart" color="browntwo" style="font-size: 28px; padding-top: 4px;"></ion-icon>
+          <ion-card-title>Favoritos</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+    <div>
+      <ion-card class="read" style="background-color: #DCC095; color: #A48A60;" lines="full" color="primary" (click)="libleyendo()">
+        <ion-card-header>
+          <ion-icon name="book" color="brownone" style="font-size: 28px; padding-top: 4px;"></ion-icon>
+          <ion-card-title>Leyendo</ion-card-title>
+        </ion-card-header>
+      </ion-card>
+    </div>
+  </div>
+
+<!--
+  <div class="principalLibraries">
+    <div class="favouritesLibrary" (click)='libfav()'>
+      <ion-icon name="heart" size="large"></ion-icon>
+
+    </div>
+
+    <div class="readingLibrary" (click)='libleyendo()'>
+      <ion-icon name="book" size="large"></ion-icon>
+    </div>
+  </div>
+-->
+
+  <div id="reading_shortcut" class="container" style="background-color: rgba(94, 61, 48, 0.3); margin-top: 10px;">
+    <ion-title><h3>Leyendo</h3></ion-title>
+    <div class="scroll" scrollX="true">
+      <div class="scrollHorizontal">
+        <ion-card *ngFor="let b of reading" style="width: 110px; height: 172px;" (click)="openBook(b)">
+          <ion-img src="{{b.img}}"></ion-img>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="libraries != undefined && libraries.length!=2">
+    <ion-title><h3>Bibliotecas</h3></ion-title>
+    <ion-card class="library-item" *ngFor="let l of librariesToShow" lines="full" color="primary" (click)="openLibrary(l)">
+      <ion-card-header>
+        <ion-icon name="{{l.iconName}}" color="{{l.color}}" style="font-size: 28px; padding-top: 4px;"></ion-icon>
+        <ion-card-title>{{l.name}}</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </div>
+  <div *ngIf="libraries == undefined || libraries.length==2">
+    <ion-title><h3>Bibliotecas</h3></ion-title>
+    <ion-item lines="none">
+      {{message}}
+    </ion-item>
+  </div>
+  <!--
+  <ion-list style="margin-top: 0px; padding-top: 0px;">
+    <div *ngIf="libraries != undefined && libraries.length!=2">
+      <ion-item *ngFor="let l of libraries | slice:2; let i = index;" lines="full" color="primary" (click)="openLibrary(l)">
+        <ion-icon slot="start" name="{{l.icon}}"></ion-icon>
+        <ion-label>
+          <h2>{{l.name}}</h2>
+        </ion-label>
+    </ion-item>
+    </div>
+    <div *ngIf="libraries == undefined || libraries.length==2">
+      <ion-item>
+        {{message}}
+      </ion-item>
+    </div>
+  </ion-list>-->
+  
+
+  <div id="identification_recom" style="width: 90%; margin-left: 5%; padding: 5%; border-radius: 5px; background-color: rgba(94, 61, 48, 0.3);">
+    <p>Regístrese gratuitamente o inicie sesión si ya está registrad@ para una mejor experiéncia en <strong>oBooks</strong>!</p>
+    <div class="identification_options_recom">
+      <ion-button id="botonL" (click)="login()">Iniciar sesión</ion-button>
+      <ion-button id="botonR" (click)="register()">Registrarse</ion-button>
+    </div>
+  </div>
+  
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="createLibrary()">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

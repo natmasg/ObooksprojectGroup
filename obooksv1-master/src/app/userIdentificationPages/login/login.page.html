@@ -1,0 +1,41 @@
+<!--solo que salga a partir del alertttt, si es el inicio nope-->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="title">
+    <ion-title><h1>Inicio de sesión</h1></ion-title>
+  </div>
+
+  <p class="text">Introduzca los siguiendes datos para el inicio de sesión en su cuenta:</p>
+
+  <ion-list class="form">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input id="user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input id="password" type="password"></ion-input>
+    </ion-item>
+
+    <ion-button class="principar-button"  (click)="checkUser()">Iniciar sesión</ion-button>
+    <p class="text">o</p>
+    <div class="secondary-button">
+      <p class="secondary-button" (click)="sendToRegister()">Registrarse</p>
+    </div>
+    <div class="secondary-button-darker">
+      <p (click)="useGuest()">Usar <strong>oBooks</strong> como invitado</p>
+    </div>
+
+    
+  
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-title><h1>Añadir a las bibliotecas...  </h1></ion-title>
+  </div>
+
+  <ion-button class="principar-button" (click)="newLibrary(book)">Crear una nueva</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let l of libraries | slice:2; let i = index;">
+      <ion-label>{{l.name}}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="l.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="endSelection()">
+    <ion-fab-button>
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

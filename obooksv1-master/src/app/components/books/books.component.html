@@ -1,0 +1,21 @@
+<!--<ion-title>{{category}}</ion-title>-->
+
+<div class="container" style="background-color: rgba(94, 61, 48, 0.3);">
+  <div class="scroll" scrollX="true">
+    <div class="scrollHorizontal">
+      
+      
+    
+      <ion-card *ngFor="let b of allBooks" style="width: 100px;" (click)="openBook(b)">
+        <ion-img src="{{b.img}}"></ion-img>
+      </ion-card>
+
+
+
+      <!--<ion-card class="{{ size }}">
+        <ion-img src="https://static-cse.canva.com/blob/424162/1024w-qIvQK6RTXxg.jpg"></ion-img>
+       
+      </ion-card> -->
+    </div>
+  </div>
+</div>

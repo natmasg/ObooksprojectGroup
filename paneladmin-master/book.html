@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Add Bookss :)</title>
+        <meta charset="UTF-8">
+        <a href="help.html">Add  Help</a>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    </header>
+    <body>
+        <div style="margin-bottom: 3%;" ></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Title:</label>
+                                    <input id="title" name="title" type="text" placeholder="Title" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Year:</label>
+                                    <input id="year" name="year" type="text" placeholder="Year" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Language:</label>
+                                    <input id="lang" name="lang" type="text" placeholder="Language" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Tags:</label>
+                                    <input id="tags" name="tags" type="text" placeholder="Tag" class="form-control">
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">Author:</label>
+                                    <input id="author" name="author" type="text" placeholder="Author" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">url_book:</label>
+                                    <input id="url_book" name="url_book" type="text" placeholder="Url Book" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">pages:</label>
+                                    <input id="pages" name="pages" type="text" placeholder="Pages" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <label for="">img:</label>
+                                    <input id="img" name="img" type="text" placeholder="Image" class="form-control">
+                                </div>
+                            </div>
+                            <button  onclick="validacio()">ADD BOOK</button>   
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    async function validacio(){
+    var title = document.getElementById("title").value
+    console.log(title)
+    var year = document.getElementById("year").value
+    console.log(year)
+    var language = document.getElementById("lang").value
+    console.log(language)
+    var tags = document.getElementById("tags").value
+    console.log(tags)
+    var author = document.getElementById("author").value
+    console.log(author)
+    var url_book = document.getElementById("url_book").value
+    console.log(url_book)
+    var pages = document.getElementById("pages").value
+    console.log(pages)
+    var img = document.getElementById("img").value
+    console.log(img)
+    var book={
+        'title': title,
+        'year': year,
+        'language': language,
+        'tags':tags,
+        'author':author,
+        'url_book':url_book,
+        'pages':pages,
+        'img':img
+    };
+
+    console.log(book)
+
+    const url = "http://sergi-diaz-7e2.alwaysdata.net/obooksback/index.php/api/bookadd?";
+    var postBook = await fetch(url, {
+       headers: {
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify(book)
+    })
+        alert(postBook.status)
+    if(postBook.status===200){
+        var title = document.getElementById("title").value =""
+        var year = document.getElementById("year").value =""
+        var language = document.getElementById("lang").value =""
+        var tags = document.getElementById("tags").value =""
+        var author = document.getElementById("author").value =""
+        var url_book = document.getElementById("url_book").value =""
+        var pages = document.getElementById("pages").value =""
+        var img = document.getElementById("img").value =""
+    }
+}
+</script>

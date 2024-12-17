@@ -1,0 +1,46 @@
+<!--<div *ngFor="let c of allCategories">
+  
+</div>
+
+
+
+
+
+<app-books *ngFor="let c of allCategories" category="{{c}}" size="little_book"></app-books>
+
+
+
+
+-->
+
+
+<div *ngFor="let c of booksInCategories; let i = index;">
+<ion-title>{{c[0]}}</ion-title>
+
+
+<div class="container">
+  <div class="scroll" scrollX="true">
+    <div class="scrollHorizontal">
+      
+      
+    
+      <ion-card class="little_book"  *ngFor="let b of booksInCategories[i][1]; " (click)="bookDetail(b)">
+        <ion-img src="{{b.img}}"></ion-img>
+      </ion-card>
+
+      
+
+
+
+      <!--<ion-card class="{{ size }}">
+        <ion-img src="https://static-cse.canva.com/blob/424162/1024w-qIvQK6RTXxg.jpg"></ion-img>
+       
+      </ion-card> -->
+    </div>
+  </div>
+</div>
+
+
+<!--<app-books *ngFor="let c of allCategories" category ="{{c}}" (click)="bookDetail(b)"> 
+  
+</app-books>-->

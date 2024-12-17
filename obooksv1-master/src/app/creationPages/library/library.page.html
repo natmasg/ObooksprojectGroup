@@ -1,0 +1,47 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+  </ion-buttons>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-title><h1>Nueva biblioteca</h1></ion-title>
+  </div>
+
+  <div style="height: 70px; width: 70px; margin: 0 auto; text-align: left">
+    <ion-card style="text-align: center;" color="primary">
+        <ion-icon style="padding: 10px;" id="testing_card_icon" name="{{icon}}" color="{{color}}" size="large"></ion-icon>
+    </ion-card>
+  </div>
+  <ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input [(ngModel)]="title"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Color</ion-label>
+      <ion-select value="secondary" (ionChange)="changedColor($event)">
+        <ion-select-option *ngFor="let color of colors" [value]='color.colorName'>{{color.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Icono</ion-label>
+      <ion-select value="library" (ionChange)="changedIcon($event)">
+        <ion-select-option *ngFor="let icon of icons" [value]="icon.icon">{{icon.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="create()">
+    <ion-fab-button>
+      <ion-icon name="checkmark-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,83 @@
+.principalLibraries {
+    display: flex;
+    justify-content: space-around;
+    height: 130px;
+    padding-bottom: 10px;
+}
+
+.principalLibraries2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 120px;
+    padding-bottom: 20px;
+}
+
+.principalLibraries2>div {
+    width: 50%;
+    height: 100%;
+}
+
+.principalLibraries2>div>ion-card {
+    height: 100%;
+}
+
+.favouritesLibrary {
+    background-color: #A48A60;
+    border-radius: 5px;
+    width: 45%;
+    height: 100%;
+    color: #F7ECE6;
+}
+
+.readingLibrary {
+    background-color: #DCC095;
+    border-radius: 5px;
+    width: 45%;
+    height: 100%;
+    color: #856348;
+}
+
+.favouritesLibrary > ion-icon, .readingLibrary > ion-icon {
+    margin-top: 15px;
+    margin-left: 15px;;
+}
+
+.identification_options_recom {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.identification_options_recom>ion-button {
+    width: 45%;
+}
+
+.defaultLibrary {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    justify-content: left;
+    align-items: center;
+    background-color: #8D6B39;
+    color: #F7ECE6;
+    height: 60px;
+    padding-left: 1em;
+    border-bottom: solid 1px #C0A47A;
+}
+
+ion-img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: inherit;
+    object-position: inherit;
+}
+
+ion-card-header {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}

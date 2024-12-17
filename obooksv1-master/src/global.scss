@@ -1,0 +1,141 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+/* LOGIN AND REGISTER */
+
+.principar-button {
+  width: 80%;
+  margin: 30px 10% 10px 10%;
+  height: 40px;
+}
+
+.secondary-button {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.secondary-button-darker {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.secondary-button-darker > p {
+  width: 70%;
+  margin-left: 15%;
+  border-radius: 3px;
+  padding: 10px;
+  color: white; 
+  background-color: rgb(163, 144, 120);
+}
+
+.secondary-button > p {
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 3px;
+  padding: 10px;
+  color: rgb(119, 109, 90);
+  background-color: rgb(228, 209, 181);
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.form {
+  margin-top: 30px;
+}
+
+/* END OF LOGIN AND REGISTER */
+
+
+
+
+body, span, button, h1, h2, h3, h4, h5, h6, p, ion-item, ion-title {
+    font-family: 'Questrial' !important;
+}
+
+
+.section-title {
+    margin-top: 3em;
+}
+
+.title {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+
+/* BOOKS */
+.container {
+    width: 100%;
+    overflow: hidden; 
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll {
+      overflow: auto;
+    }
+  }
+
+  .little_book {
+    height: 190px;
+  }
+
+  .little_book > ion-card-content{
+      width: 120px;
+      height: 190px;
+  }
+
+  .big_book {
+    width: 180px;
+  }
+  
+  .big_book > ion-card-content{
+      width: 120px;
+      height: 190px;
+  }
+
+  .medium_book {
+    width: 150px;
+  }
+  
+  .medium_book > ion-card-content {
+      width: 120px;
+      height: 190px;
+  }
+
+  .scrollHorizontal {
+      display: inline-flex;
+  }
+  /* BOOKS (END) */

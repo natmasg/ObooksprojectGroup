@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-title><h1>Contraseña</h1></ion-title>
+  </div>
+
+  <p class="text">Elija una contraseña segura:</p>
+
+
+  <ion-list class="form">
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Repetir Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="repPassword"></ion-input>
+    </ion-item>
+   
+
+    <ion-button class="principar-button" (click)="validate()">Siguiente</ion-button>
+   
+  
+  </ion-list>
+</ion-content>

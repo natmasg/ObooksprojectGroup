@@ -1,0 +1,39 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons id="deleteButtton" slot="end" style="margin-right: 15px;">
+      <ion-icon name="trash-outline" slot="end" (click)="deleteLibrary()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">
+    <ion-title><h1>{{library.name}}</h1></ion-title>
+  </div>
+
+  <div (click)="openSegment();">
+    <ion-searchbar id="search" (ionCancel)="closeSegment()" (ionClear)="llenarLista()" (keyup)="search()"  showCancelButton="focus"></ion-searchbar>
+    <div id="pantallaBuscar" style="display: none;">
+      <ion-segment value="all">
+        <ion-segment-button  id="titulo" (click)="changeFilter('title')" value="title">
+          <ion-label>Título</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('author')" value="author">
+          <ion-label>Autor</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('tags')" value="tags">
+          <ion-label>Categoria</ion-label>
+        </ion-segment-button>
+        <ion-segment-button (click)="changeFilter('language')" value="language">
+          <ion-label>Idioma</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
+
+  <app-full-page-books [books]="booksSearch" [library]="library"></app-full-page-books>
+
+</ion-content>
